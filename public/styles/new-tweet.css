@@ -1,0 +1,28 @@
+label {
+  display: flex;
+  justify-content: start;
+  font-weight: bold;
+}
+
+textarea {
+  background-color: #f4f1ec;
+  border: none;
+  border-bottom: 5px solid;
+  width: 90vw;
+  outline: none;
+}
+
+.below-form {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  font-family: 'Bungee', sans-serif;
+  color: white;
+  background-color: #4056A1;
+}
+
+.counter {
+  font-family: 'Bungee', sans-serif;
+}
