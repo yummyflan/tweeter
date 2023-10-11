@@ -1,0 +1,30 @@
+nav {
+  height: 120px;
+  width: 100vw;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  padding: 1.5em;
+  position: fixed;
+}
+
+#logo {
+  font-family: 'Bungee', sans-serif;
+  font-size: 45px;
+}
+
+nav span {
+  font-weight: bold;
+}
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-text-right {
+  text-align: center;
+}
+
+nav i {
+  color: orangered;
+}

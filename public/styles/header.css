@@ -1,0 +1,24 @@
+
+header {
+  background-color: goldenrod;
+  height: 520px;
+  background-image: url("../images/cubes.png");
+  background-repeat: repeat;
+}
+
+.header-image {
+  height: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+header h2 {
+  text-align: center;
+  margin: auto;
+  color: white;
+}
+
+header span {
+  font-weight: lighter;
+}
