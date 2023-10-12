@@ -32,12 +32,13 @@ const createTweetElement = function (tweetObject) {
 
 // renders tweets and appends it to client page
 const renderTweets = function (tweets) {
+  $("#tweets-container").empty();
   // loops through array of tweets
   for (const tweet of tweets) {
     // calls createTweetElement for each tweet
     const $tweet = createTweetElement(tweet);
     // takes return value and appends it to the tweets container
-    $("#tweets-container").append($tweet);
+    $("#tweets-container").prepend($tweet);
   }
 };
 
@@ -47,24 +48,33 @@ const submitTweet = function () {
     event.preventDefault();
 
     // textarea input length used for form validation
-    const textAreaLength = $("form").find("textarea").val().length;
-    if (textAreaLength > 140) {
-      event.preventDefault();
+    const textArea = $("form").find("textarea");
+
+    // used to reset counter in post later
+    const counter = $("form").find("output");
+
+    // validation 
+    if (textArea.val().length > 140) {
       alert("You are over the character limit! :(");
       return;
     }
 
-    if (textAreaLength === 0) {
-      event.preventDefault();
+    // validation
+    if (textArea.val().length === 0) {
       alert("Please write something before submitting!");
       return;
     }
-
+    
+    
     // if all is well, serializes form input
     const data = $("form").serialize();
 
-    // and then sends serialized data to server
-    $.post("/tweets", data);
+    // and then sends serialized data to server, reloads tweets, and clears out the textarea + counter
+    $.post("/tweets", data,).then(function() {
+      loadTweets();
+      textArea.val("");
+      counter.val(140);
+    });
   });
 };
 
