@@ -1,5 +1,6 @@
 $(document).ready(function() {
   renderTweets(data);
+  submitTweet();
 })
 
 // Fake data taken from initial-tweets.json
@@ -64,5 +65,12 @@ const createTweetElement = function (tweetObject) {
   return $tweet;
 };
 
-
+// prevents default of form submission
+const submitTweet = function () {
+  $("#new-tweet").on("submit", function(event) {
+    alert("handler for event was called");
+    event.preventDefault();
+  })
+  
+}
 
