@@ -2,6 +2,7 @@ label {
   display: flex;
   justify-content: start;
   font-weight: bold;
+  margin-top: 3em;
 }
 
 textarea {
@@ -29,4 +30,18 @@ button {
 
 .counter-negative {
   color: red;
+}
+
+#error-none {
+  color: red;
+  font-weight: bold;
+  border: red 5px solid;
+  display: none;
+}
+
+#error-over {
+  color: red;
+  font-weight: bold;
+  border: red 5px solid;
+  display: none;
 }

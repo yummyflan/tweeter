@@ -52,32 +52,40 @@ const renderTweets = function (tweets) {
 // serializes input data and sends to server
 const submitTweet = function () {
   $("form").on("submit", function (event) {
+    // prevent page refresh
     event.preventDefault();
 
-    // textarea input length used for form validation
-    const textArea = $("form").find("textarea");
+    // variables for error validation messages
+    const errorNone = $("form").siblings("#error-none");
+    const errorOver = $("form").siblings("#error-over");
 
-    // used to reset counter in post later
+    // variables for textarea input length, counter
+    const textArea = $("form").find("textarea");
     const counter = $("form").find("output");
 
-    // validation 
-    if (textArea.val().length > 140) {
-      alert("You are over the character limit! :(");
+    // slideUp errors if visible
+    errorNone.slideUp();
+    errorOver.slideUp();
+
+    // validation for when there is no text
+    if (textArea.val().length === 0) {
+      errorNone.slideDown();
+      errorNone.css("display", "block");
       return;
     }
 
-    // validation
-    if (textArea.val().length === 0) {
-      alert("Please write something before submitting!");
+    // validation for over 140 characters
+    if (textArea.val().length > 140) {
+      errorOver.slideDown();
+      errorOver.css("display", "block");
       return;
     }
-    
-    
+
     // if all is well, serializes form input
     const data = $("form").serialize();
 
     // and then sends serialized data to server, reloads tweets, and clears out the textarea + counter
-    $.post("/tweets", data,).then(function() {
+    $.post("/tweets", data).then(function () {
       loadTweets();
       textArea.val("");
       counter.val(140);
