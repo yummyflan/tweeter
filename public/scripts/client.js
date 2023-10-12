@@ -3,6 +3,13 @@ $(document).ready(function () {
   loadTweets();
 });
 
+// function to escape the input data
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 // intakes tweet data parameter and uses a template to return completed tweet element
 const createTweetElement = function (tweetObject) {
   const $tweet = $(`
@@ -14,7 +21,7 @@ const createTweetElement = function (tweetObject) {
   </div>
       <p class="handle">${tweetObject.user.handle}</p>
     </header>
-    <p class="tweet-content">${tweetObject.content.text}</p>
+    <p class="tweet-content">${escape(tweetObject.content.text)}</p>
     <hr>
     <footer>
       <p class="date">${timeago.format(tweetObject.created_at)}</p>
