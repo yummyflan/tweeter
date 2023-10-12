@@ -29,16 +29,18 @@ const data = [
   }
 ]
 
+// renders tweets and appends it to client page
 const renderTweets = function(tweets) {
 // loops through array of tweets
   for (const tweet of tweets) {
+    // calls createTweetElement for each tweet
     const $tweet = createTweetElement(tweet);
+    // takes return value and appends it to the tweets container
     $("#tweets-container").append($tweet);
   }
-// calls createTweetElement for each tweet
-// takes return value and appends it to the tweets container
 }
 
+// intakes tweet data parameter and uses a template to return completed tweet element 
 const createTweetElement = function (tweetObject) {
   const $tweet = $(`
   <article class="tweet">
@@ -65,12 +67,14 @@ const createTweetElement = function (tweetObject) {
   return $tweet;
 };
 
-// prevents default of form submission
+// prevents default of form submission and uses AJAX to send serialized data to server
 const submitTweet = function () {
-  $("#new-tweet").on("submit", function(event) {
-    alert("handler for event was called");
+  $("form").on("submit", function(event) {
     event.preventDefault();
-  })
+    const data = $("form").serialize();
+    $.post("/tweets", data);
+    console.log(data);
+  });
   
 }
 
