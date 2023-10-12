@@ -15,11 +15,6 @@ article.tweet header {
   padding: 5px;
 }
 
-article header i {
-  font-size: xxx-large;
-  margin-top: 10px;
-}
-
 article p {
   display: flex;
   margin-left: 1em;

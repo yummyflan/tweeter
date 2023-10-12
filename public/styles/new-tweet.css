@@ -26,3 +26,7 @@ button {
 .counter {
   font-family: 'Bungee', sans-serif;
 }
+
+.counter-negative {
+  color: red;
+}

@@ -1,5 +1,5 @@
 
-header {
+.top-header {
   background-color: goldenrod;
   height: 520px;
   background-image: url("../images/cubes.png");
@@ -13,12 +13,12 @@ header {
   align-items: flex-end;
 }
 
-header h2 {
+.top-header h2 {
   text-align: center;
   margin: auto;
   color: white;
 }
 
-header span {
+.top-header span {
   font-weight: lighter;
 }
