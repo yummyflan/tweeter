@@ -1,17 +1,17 @@
-$(document).ready(function () {
+$(document).ready(function() {
   submitTweet();
   loadTweets();
 });
 
 // helper function to escape the input data, protecting server from any attacks
-const escape = function (str) {
+const escape = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 };
 
 // intakes tweet data parameter and uses a template to return completed tweet element
-const createTweetElement = function (tweetObject) {
+const createTweetElement = function(tweetObject) {
   const $tweet = $(`
   <article class="tweet">
   <header>
@@ -40,7 +40,7 @@ const createTweetElement = function (tweetObject) {
 };
 
 // receives array of tweets and appends it to client page
-const renderTweets = function (tweets) {
+const renderTweets = function(tweets) {
   $("#tweets-container").empty();
   // loops through array of tweets
   for (const tweet of tweets) {
@@ -52,15 +52,15 @@ const renderTweets = function (tweets) {
 };
 
 // fetches array of tweets from /tweet and returns the data into renderTweets
-const loadTweets = function () {
-  $.get("/tweets", function (data) {
+const loadTweets = function() {
+  $.get("/tweets", function(data) {
     renderTweets(data);
   });
 };
 
 // serializes input data, sends to server, updates tweets, and error handling for form.
-const submitTweet = function () {
-  $("form").on("submit", function (event) {
+const submitTweet = function() {
+  $("form").on("submit", function(event) {
     // prevent page refresh
     event.preventDefault();
 
@@ -94,7 +94,7 @@ const submitTweet = function () {
     const data = $("form").serialize();
 
     // sends serialized data to server, reloads tweets, clears out the textarea and resets counter
-    $.post("/tweets", data).then(function () {
+    $.post("/tweets", data).then(function() {
       loadTweets();
       textArea.val("");
       counter.val(140);
