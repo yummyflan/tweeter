@@ -33,3 +33,37 @@ body {
   margin-left: auto;
   margin-right: auto;
  }
+
+ /* response layout for tablet */
+ @media only screen and (max-width: 1024px) {
+  body nav {
+    background-color: goldenrod;
+    background-image: url("../images/cubes.png");
+    background-repeat: repeat;
+  }
+ }
+
+ /* response layout for desktop */
+ @media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  body .header-image {
+    height: 333px;
+  }
+
+  body .top-header {
+    margin-top: 9em;
+    margin-left: 3em;
+    height: 420px;
+    width: 33.3%;
+  }
+
+  main {
+    margin-top: 6em;
+    margin-right: 3em;
+    width: 50%;
+  }
+ }
