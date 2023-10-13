@@ -22,3 +22,8 @@ Please enjoy!
 
 ## Screenshots
 
+!["Screenshot of Tweeter Desktop Version"](https://github.com/yummyflan/tweeter/blob/master/docs/tweeter_desktop_version.png?raw=true)
+
+!["Screenshot of Tweeter Tablet Version"](https://github.com/yummyflan/tweeter/blob/master/docs/tweeter_tablet_version.png?raw=true)
+
+!["Screenshot of Tweets in Tweeter"](https://github.com/yummyflan/tweeter/blob/master/docs/tweets.png?raw=true)
