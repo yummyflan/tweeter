@@ -1,3 +1,6 @@
+/* CSS for the tweet template */
+
+/* styling of the entire tweet box */
 article {
   border: 5px solid;
   padding: 15px;
@@ -6,33 +9,39 @@ article {
   max-width: 100%;
 }
 
+/* box shadow on tweet */
 article:hover {
   box-shadow: 10px 10px 2px 1px rgba(0, 0, 255, .2);
 }
 
+/* left aligns avatar and name, right aligns handle */
 article.tweet header {
   display: flex;
   justify-content: space-between;
   padding: 5px;
 }
 
+/* adds margins to all p text elements in tweet  */
 article p {
   display: flex;
   margin-left: 1em;
   margin-right: 1em;
 }
 
+/* container for avatar and name */
 .avatar-name {
   display: flex;
   font-weight: normal;
 }
 
+/* user's handle */
 .handle {
   color: lightsteelblue;
   font-weight: bold;
   margin-right: 1em;
 }
 
+/* the styling of the actual tweet data */
 .tweet-content { 
   display: block;
   font-weight: bold;
@@ -41,32 +50,34 @@ article p {
   word-wrap: break-word;
 }
 
+/* a line separating tweet from footer icons */
 hr {
   border-top: 5px solid;
   margin-bottom: 5px;
 }
 
+/* separates the tweet button and three icons */
 footer {
   display: flex;
   justify-content: space-between;
   font-size: medium;
 }
 
+/* styling for the date/time */
 .date {
   margin-top: 5px;
   margin-bottom: 0;
   margin-left: 10px;
 }
 
-.tweet-icons {
-  font-size: x-large;
-}
-
+/* icons on the bottom right of tweet */
 .tweet-icons i {
+  font-size: x-large;
   margin-right: 7px;
   color: #4056A1;
 }
 
+/* changes colour of icons upon hover */
 .tweet-icons i:hover {
   color: goldenrod;
 }

@@ -1,3 +1,5 @@
+// client javascript file
+
 $(document).ready(function() {
   submitTweet();
   loadTweets();
@@ -12,13 +14,15 @@ const escape = function(str) {
 
 // intakes tweet data parameter and uses a template to return completed tweet element
 const createTweetElement = function(tweetObject) {
+
+  // using template literal to compose the tweet
   const $tweet = $(`
   <article class="tweet">
-  <header>
-  <div class="avatar-name">
-  <img src="${tweetObject.user.avatars}"/>
-  <p>${tweetObject.user.name}</p>
-  </div>
+    <header>
+      <div class="avatar-name">
+        <img src="${tweetObject.user.avatars}"/>
+        <p>${tweetObject.user.name}</p>
+      </div>
       <p class="handle">${tweetObject.user.handle}</p>
     </header>
     <body>

@@ -1,3 +1,6 @@
+/* nav CSS file */
+
+/* styling of nav bar */
 nav {
   height: 120px;
   width: 100vw;
@@ -7,21 +10,25 @@ nav {
   position: fixed;
 }
 
+/* TWEETER logo */
 #logo {
   font-family: 'Bungee', sans-serif;
   font-size: 45px;
 }
 
+/* makes the word "Write" bold */
 nav span {
   font-weight: bold;
 }
 
+/* keeps TWEETER on the left, and text + double arrows on the right */
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* gives the double arrows red colour */
 nav i {
   color: orangered;
 }

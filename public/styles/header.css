@@ -1,4 +1,6 @@
+/* header CSS file */
 
+/* background colour, size, and transparent image for header */
 .top-header {
   background-color: goldenrod;
   height: 520px;
@@ -6,6 +8,7 @@
   background-repeat: repeat;
 }
 
+/* profile picture of user */
 .header-image {
   height: 420px;
   display: flex;
@@ -13,12 +16,14 @@
   align-items: flex-end;
 }
 
+/* the user's name */
 .top-header h2 {
   text-align: center;
   margin: auto;
   color: white;
 }
 
+/* removes bold from last name */
 .top-header span {
   font-weight: lighter;
 }
