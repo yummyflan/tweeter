@@ -15,14 +15,11 @@ nav {
 nav span {
   font-weight: bold;
 }
+
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.nav-text-right {
-  text-align: center;
 }
 
 nav i {

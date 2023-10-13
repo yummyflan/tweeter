@@ -56,15 +56,19 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <div class="nav-container">
+        <!--left tweeter logo-->
         <span id="logo">tweeter</span>
-        <div class="nav-right">
-          <div class="nav-text-right">
-            <span>Write</span> a new tweet<br />
-            <i class="fa-solid fa-angles-down"></i>
-          </div>
+
+        <!--container for right side of nav bar-->
+        <div>
+          <span>Write</span> a new tweet<br />
+          <!--double arrow down symbol-->
+          <i class="fa-solid fa-angles-down"></i>
         </div>
       </div>
     </nav>
+
+    <!--Header with image, background, and user's name-->
     <header class="top-header">
       <div class="header-image">
         <img src="/images/profile-hex.png" />
@@ -76,15 +80,23 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
+
       <!--Creating new tweet form-->
       <section class="new-tweet">
+        <!--error handling messages, hidden by default-->
         <h2 id="error-none">⛔️ Please write something first‼️ ⛔️</h2>
         <h2 id="error-over">⛔️ You are over the character limit‼️ ⛔️</h2>
+
+        <!--Form that will send tweets to server-->
         <form method="post" action="/tweets">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
+          
+          <!--footer of the form where the submit button is-->
           <div class="below-form">
             <button type="submit">Tweet</button>
+
+            <!--this is the character counter on the right side-->
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
