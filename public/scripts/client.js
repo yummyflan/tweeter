@@ -3,7 +3,7 @@ $(document).ready(function () {
   loadTweets();
 });
 
-// function to escape the input data
+// helper function to escape the input data, protecting server from any attacks
 const escape = function (str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
@@ -37,7 +37,7 @@ const createTweetElement = function (tweetObject) {
   return $tweet;
 };
 
-// renders tweets and appends it to client page
+// receives array of tweets and appends it to client page
 const renderTweets = function (tweets) {
   $("#tweets-container").empty();
   // loops through array of tweets
@@ -49,7 +49,14 @@ const renderTweets = function (tweets) {
   }
 };
 
-// serializes input data and sends to server
+// fetches array of tweets from /tweet and returns the data into renderTweets
+const loadTweets = function () {
+  $.get("/tweets", function (data) {
+    renderTweets(data);
+  });
+};
+
+// serializes input data, sends to server, updates tweets, and error handling for form.
 const submitTweet = function () {
   $("form").on("submit", function (event) {
     // prevent page refresh
@@ -59,11 +66,11 @@ const submitTweet = function () {
     const errorNone = $("form").siblings("#error-none");
     const errorOver = $("form").siblings("#error-over");
 
-    // variables for textarea input length, counter
+    // variables for textarea input length, form counter
     const textArea = $("form").find("textarea");
     const counter = $("form").find("output");
 
-    // slideUp errors if visible
+    // slideUp error messages if visible
     errorNone.slideUp();
     errorOver.slideUp();
 
@@ -84,7 +91,7 @@ const submitTweet = function () {
     // if all is well, serializes form input
     const data = $("form").serialize();
 
-    // and then sends serialized data to server, reloads tweets, and clears out the textarea + counter
+    // sends serialized data to server, reloads tweets, clears out the textarea and resets counter
     $.post("/tweets", data).then(function () {
       loadTweets();
       textArea.val("");
@@ -93,9 +100,3 @@ const submitTweet = function () {
   });
 };
 
-// fetches array of tweets from /tweet and calls renderTweets with that data
-const loadTweets = function () {
-  $.get("/tweets", function (data) {
-    renderTweets(data);
-  });
-};

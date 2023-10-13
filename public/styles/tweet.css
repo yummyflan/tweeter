@@ -41,6 +41,11 @@ article p {
   word-wrap: break-word;
 }
 
+hr {
+  border-top: 5px solid;
+  margin-bottom: 5px;
+}
+
 footer {
   display: flex;
   justify-content: space-between;
