@@ -21,8 +21,10 @@ const createTweetElement = function (tweetObject) {
   </div>
       <p class="handle">${tweetObject.user.handle}</p>
     </header>
-    <p class="tweet-content">${escape(tweetObject.content.text)}</p>
-    <hr>
+    <body>
+      <p class="tweet-content">${escape(tweetObject.content.text)}</p>
+      <hr>
+    </body>
     <footer>
       <p class="date">${timeago.format(tweetObject.created_at)}</p>
       <div class="tweet-icons">
